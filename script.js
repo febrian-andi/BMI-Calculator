@@ -5,24 +5,20 @@ calculate.addEventListener("click", function(){
     let weight = document.getElementById("weight").value;
     let BMI =  weight/((height/100)*(height/100));
     document.getElementById("result").innerText=BMI.toFixed(2);
-    console.log(BMI)    
-
-    const description = document.getElementById("description");
-    const descriptionCaption = document.createElement("p");
-    description.append(descriptionCaption);
-    descriptionCaption.setAttribute("id", "descriptionCaption");
+   
+    const descriptionBMI = document.getElementById("description-BMI");;
 
     if (BMI < 18.5){
-        document.getElementById("descriptionCaption").innerText="Underweight";
+        descriptionBMI.innerText = "Underweight";
         console.log("Underweight");
     }else if (BMI >= 18.5 && BMI <= 24.9){
-        document.getElementById("descriptionCaption").innerText="Normal";
+        descriptionBMI.innerText = "Normal";
         console.log("Normal");
     }else if (BMI >= 24.9 && BMI <= 29.9){
-        document.getElementById("descriptionCaption").innerText="Overweight";    
+        descriptionBMI.innerText = "Overweight";    
         console.log("Overweight");
     }else if (BMI > 29.9){
-        document.getElementById("descriptionCaption").innerText="Obese";
+        descriptionBMI.innerText = "Obese";
         console.log("Obese");
     }else if (height == '' || weight == ''){
         alert("Please enter a valid number");
